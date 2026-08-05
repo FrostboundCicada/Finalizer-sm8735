@@ -57,12 +57,63 @@ pub fn monitor_screen_status() -> bool {
     output.contains("true")
 }
 
-pub fn get_now_top_window_pkg_name() -> String {
+pub fn get_now_top_window_pkg_name() -> Vec<String> {
+
     let result = Command::new("sh")
         .arg("-c")
-        .arg("dumpsys window | grep -E 'mCurrentFocus=Window'")
+        .arg(
+            "dumpsys window | grep -E 'mCurrentFocus=Window|mFocusedApp'"
+        )
         .output()
         .expect("Failed to execute command");
 
-    String::from_utf8_lossy(&result.stdout).to_string()
-}
+
+    let output =
+        String::from_utf8_lossy(&result.stdout);
+
+
+
+    let mut packages: Vec<String> = Vec::new();
+
+
+
+    for line in output.lines() {
+
+
+        // 示例:
+        // mCurrentFocus=Window{xxxx u0 com.netease.party/com.xxx.MainActivity}
+
+
+        if let Some(pos) = line.find(" u0 ") {
+
+
+            let info = &line[pos + 4..];
+
+
+            if let Some(pkg) = info.split('/').next() {
+
+
+                let pkg = pkg
+                    .replace("}", "")
+                    .trim()
+                    .to_string();
+
+
+
+                if !pkg.is_empty()
+                    && !packages.contains(&pkg)
+                {
+
+                    packages.push(pkg);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+    packages
+            }
