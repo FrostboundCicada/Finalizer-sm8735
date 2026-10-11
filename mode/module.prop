@@ -1,6 +1,6 @@
 id=SZE_FINALIZER
 name=finalizer
-versionCode=20260707
-version=v3.0
+versionCode=20261011
+version=v3.0-8sgen4
 author=ShenEternity
-description=一个简单的调度。
+description=一个简单的调度(骁龙8s Gen4定制版,沿用原作者调度思路)。

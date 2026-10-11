@@ -1,8 +1,8 @@
 {
     "name": "SZE_FINALIZER",
     "author": "ShenEternity",
-    "version": "3.0-release",
-    "versionCode": 20260707,
+    "version": "3.0-8sgen4-release",
+    "versionCode": 20261011,
     "features": {
         "strict": false,
         "pedestal": false
