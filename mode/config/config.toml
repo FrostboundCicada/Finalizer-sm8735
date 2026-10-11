@@ -1,10 +1,14 @@
 [name]
-name = "8100_MAX"
-version = "2.0"
+name = "8sGen4_MAX"
+version = "1.0"
 author = "ShenEternity"
 
 [[policy]]
 from = 0
+to = 1
+
+[[policy]]
+from = 2
 to = 3
 
 [[policy]]
@@ -31,7 +35,18 @@ sleep_freq = 1000000
 
 [[mode.power.policy]]
 delay = 600
-max_freq = 2250000
+max_freq = 2000000
+min_freq = 500000
+can_boost_freq = 1000000
+boost_freq = 2000000
+margin = 2.1
+diff = 70000
+governor = "sugov_ext"
+sleep_freq = 1000000
+
+[[mode.power.policy]]
+delay = 600
+max_freq = 2200000
 min_freq = 500000
 can_boost_freq = 1000000
 boost_freq = 2000000
@@ -40,10 +55,9 @@ diff = 70000
 governor = "sugov_ext"
 sleep_freq = 1000000
 
-
 [[mode.power.policy]]
 delay = 600
-max_freq = 200000
+max_freq = 2400000
 min_freq = 500000
 can_boost_freq = 1000000
 boost_freq = 2000000
@@ -51,7 +65,6 @@ margin = 2.0
 diff = 70000
 governor = "sugov_ext"
 sleep_freq = 1000000
-
 
 
 [mode.blan]
@@ -69,7 +82,7 @@ sleep_freq = 1000000
 
 [[mode.blan.policy]]
 delay = 400
-max_freq = 2650000
+max_freq = 2400000
 min_freq = 500000
 can_boost_freq = 1000000
 boost_freq = 2000000
@@ -80,7 +93,18 @@ sleep_freq = 1000000
 
 [[mode.blan.policy]]
 delay = 400
-max_freq = 2650000
+max_freq = 2600000
+min_freq = 500000
+can_boost_freq = 1000000
+boost_freq = 2000000
+margin = 2.3
+diff = 70000
+governor = "sugov_ext"
+sleep_freq = 1000000
+
+[[mode.blan.policy]]
+delay = 400
+max_freq = 2800000
 min_freq = 500000
 can_boost_freq = 1000000
 boost_freq = 2000000
@@ -105,7 +129,7 @@ sleep_freq = 1000000
 
 [[mode.perf.policy]]
 delay = 200
-max_freq = 2850000
+max_freq = 2800000
 min_freq = 500000
 can_boost_freq = 1000000
 boost_freq = 2000000
@@ -116,7 +140,7 @@ sleep_freq = 1000000
 
 [[mode.perf.policy]]
 delay = 200
-max_freq = 2850000
+max_freq = 3000000
 min_freq = 500000
 can_boost_freq = 1000000
 boost_freq = 2000000
@@ -125,6 +149,16 @@ diff = 70000
 governor = "sugov_ext"
 sleep_freq = 1000000
 
+[[mode.perf.policy]]
+delay = 200
+max_freq = 3200000
+min_freq = 500000
+can_boost_freq = 1000000
+boost_freq = 2000000
+margin = 2.8
+diff = 70000
+governor = "sugov_ext"
+sleep_freq = 1000000
 
 
 [mode.fast]
@@ -142,7 +176,7 @@ sleep_freq = 1000000
 
 [[mode.fast.policy]]
 delay = 100
-max_freq = 2850000
+max_freq = 2800000
 min_freq = 500000
 can_boost_freq = 1000000
 boost_freq = 2000000
@@ -153,7 +187,7 @@ sleep_freq = 1000000
 
 [[mode.fast.policy]]
 delay = 100
-max_freq = 2850000
+max_freq = 3000000
 min_freq = 500000
 can_boost_freq = 1000000
 boost_freq = 2000000
@@ -162,3 +196,13 @@ diff = 70000
 governor = "sugov_ext"
 sleep_freq = 1000000
 
+[[mode.fast.policy]]
+delay = 100
+max_freq = 3200000
+min_freq = 500000
+can_boost_freq = 1000000
+boost_freq = 2000000
+margin = 3.0
+diff = 70000
+governor = "sugov_ext"
+sleep_freq = 1000000
